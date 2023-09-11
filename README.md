@@ -32,3 +32,5 @@ Security is established by having each actor only be able to access their own fu
 
 > [!NOTE]
 > We use an [API](https://open.fda.gov/) to view drug information.
+
+![Case-Use Diagram](/UseCaseDiagram.png)
