@@ -1,26 +1,34 @@
 # Pharmasoftware
+
 Project for CSC340
 
 ## Title
-*Pharmasoftware*
+
+Pharmasoftware
 
 ## Team Members
+
+Members:
+
 - Andy Salinas Guerrero
 - Dev Patel
 - Noah Phillips
 
 ## Nickname
-*Pharmasoft*
+
+Pharmasoft
 
 ## Description (about 100 words)
 
-> A brief description of what your app will be like and why it's interesting.
+This management system app will be an easy way for pharmacies to manage distribution of medications.
+If a medication is prescribed that has a conflict with another, our app will automatically notify the
+doctor and pharmacist and give options for a better suited medication.
 
-> Possible questions to answer here:
-> - What is the motivation for the app?
-> - What are the goals of the app?
-> - What problem will the app solve?
-> - What form will the app take to fulfill its goals?
-> - What sorts of features will the app have?
-> - What are the selling points of the app?
-> - What makes this app interesting/cool?
+Our app allows for doctors to prescribe medications and pharmacists to fill those medicationa. It also
+allows everyone access to product information. Only doctors and pharmacists can see the medication conflict
+resolution. Patient information is only viewable by the doctor and patient.
+
+Security is established by having each actor only be able to access their own functions.
+
+> [!NOTE]
+> We use an [API](https://open.fda.gov/) to view drug information.
