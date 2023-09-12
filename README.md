@@ -24,7 +24,7 @@ This management system app will be an easy way for pharmacies to manage distribu
 If a medication is prescribed that has a conflict with another, our app will automatically notify the
 doctor and pharmacist and give options for a better suited medication.
 
-Our app allows for doctors to prescribe medications and pharmacists to fill those medicationa. It also
+Our app allows for doctors to prescribe medications and pharmacists to fill those medications. It also
 allows everyone access to product information. Only doctors and pharmacists can see the medication conflict
 resolution. Patient information is only viewable by the doctor and patient.
 
