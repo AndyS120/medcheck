@@ -4,7 +4,7 @@ Project for CSC340
 
 ## Title
 
-Pharmasoftware
+MedCheck
 
 ## Team Members
 
