@@ -1,4 +1,4 @@
-# Pharmasoftware
+# MedCheck
 
 Project for CSC340
 
@@ -16,7 +16,7 @@ Members:
 
 ## Nickname
 
-Pharmasoft
+MedCheck
 
 ## Description (about 100 words)
 
