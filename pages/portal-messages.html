@@ -11,7 +11,7 @@
         <div class="navbar navbar-expand-lg bg-primary fs-5">
             <div class="container-fluid">
                 <a href="../index.html" class="navbar-brand m-3 fs-3 align-text-center">
-                    <img src="./img/logo.PNG" width="50px" height="50px" class="d-inline-block  object-fit-cover" />
+                    <img src="./img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover" />
                     MedCheck
                 </a>
                 <ul class="navbar-nav">
@@ -24,21 +24,79 @@
             <div class="col-10">
                 <h2 class="text-center m-5">Portal</h2>
                 <div class="form-floating">
-                    <input type="text" class="form-control" placeholder="Search" />
-                    <label class="form-label">Search</label>
+                    <input type="text" class="form-control" placeholder="Search Label" />
+                    <label class="form-label">Search Label</label>
                 </div>
-                <div class="row g-0">
-                    <div class="col-3 border" style="height: 550px;">
+                <div class="row g-0 mb-5">
+                    <div class="col-3 border" style="height: 550px">
                         <div class="list-group">
                             <a href="./portal-main.html" class="list-group-item list-group-item-action">Home</a>
-                            <a href="./portal-inventory.html" class="list-group-item list-group-item-action">Inventory</a>
-                            <a href="./portal-prescriptions.html" class="list-group-item list-group-item-action">Prescriptions</a>
-                            <a href="./portal-conflicts.html" class="list-group-item list-group-item-action">Conflicts</a>
-                            <a href="./portal-messages.html" class="list-group-item list-group-item-action active">Messages</a>
-                            <a href="./portal-patients.html" class="list-group-item list-group-item-action">Patients</a>
+                            <a
+                                href="./portal-inventory.html"
+                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
+                                Inventory
+                                <span class="badge bg-danger rounded-pill">1</span>
+                            </a>
+                            <a
+                                href="./portal-prescriptions.html"
+                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
+                                Prescriptions
+                                <span class="badge bg-primary rounded-pill">2</span>
+                            </a>
+                            <a
+                                href="./portal-conflicts.html"
+                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
+                                Conflicts
+                                <span class="badge bg-warning rounded-pill">2</span>
+                            </a>
+                            <a
+                                href="./portal-messages.html"
+                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action active">
+                                Messages
+                                <span class="badge bg-primary rounded-pill">8</span>
+                            </a>
+                            <a href="./portal-patients.html" class="list-group-item list-group-item-action">
+                                Patients
+                            </a>
                         </div>
                     </div>
-                    <div class="col-9 border"></div>
+                    <div class="col-9 border p-5" style="height: 550px; overflow-y: scroll">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" placeholder="Search Patient" value="James Smith" />
+                            <label class="form-label">Search Patient</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 p-3">
+                                <p class="text-center mb-3">Messages</p>
+                                <div class="list-group">
+                                    <button class="btn btn-primary list-group-item active">James Smith</button>
+                                    <button class="btn btn-primary list-group-item">James Johnson</button>
+                                    <button class="btn btn-primary list-group-item">Robert Smith</button>
+                                    <button class="btn btn-primary list-group-item">Maria Garcia</button>
+                                    <button class="btn btn-primary list-group-item">David Smith</button>
+                                    <button class="btn btn-primary list-group-item">Maria Hernandez</button>
+                                    <button class="btn btn-primary list-group-item">Mary Smith</button>
+                                    <button class="btn btn-primary list-group-item">Michael Smith</button>
+                                </div>
+                            </div>
+                            <div class="col-8 p-3">
+                                <label class="form-label mb-3">Message</label>
+                                <div class="form-control">
+                                    <p>Hey Doctor!</p>
+                                    <p class="text-end">Hey James!</p>
+                                    <p>I have a question</p>
+                                    <p class="text-end">Sure! What is it?</p>
+                                    <p>When can I set up another appointment?</p>
+                                    <p class="text-end">Whenever you can!</p>
+                                    <p>Great!</p>
+                                    <input type="text" class="form-control" />
+                                </div>
+                                <div class="d-flex justify-content-center m-5">
+                                    <button class="btn btn-primary">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-1"></div>
