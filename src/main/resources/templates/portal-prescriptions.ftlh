@@ -3,19 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
         <title>Portal</title>
-        <script src="./bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js" defer></script>
+        <script src="js/bootstrap.bundle.min.js" defer></script>
     </head>
     <body>
         <div class="navbar navbar-expand-lg bg-primary fs-5">
             <div class="container-fluid">
-                <a href="../index.html" class="navbar-brand m-3 fs-3 align-text-center">
-                    <img src="./img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover" />
+                <a href="index" class="navbar-brand m-3 fs-3 align-text-center">
+                    <img src="img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover" />
                     MedCheck
                 </a>
                 <ul class="navbar-nav">
-                    <li class="nav-item m-3"><a href="../index.html" class="nav-link">Logout</a></li>
+                    <li class="nav-item m-3"><a href="index" class="nav-link">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -30,33 +30,24 @@
                 <div class="row g-0 mb-5">
                     <div class="col-3 border" style="height: 550px">
                         <div class="list-group">
-                            <a href="./portal-main.html" class="list-group-item list-group-item-action">Home</a>
+                            <a href="main" class="list-group-item list-group-item-action">Home</a>
                             <a
-                                href="./portal-inventory.html"
+                                href="inventory"
                                 class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
                                 Inventory
                                 <span class="badge bg-danger rounded-pill">1</span>
                             </a>
                             <a
-                                href="./portal-prescriptions.html"
-                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
+                                href="prescriptions"
+                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action active">
                                 Prescriptions
                                 <span class="badge bg-primary rounded-pill">2</span>
                             </a>
                             <a
-                                href="./portal-conflicts.html"
-                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action active">
+                                href="conflicts"
+                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
                                 Conflicts
                                 <span class="badge bg-warning rounded-pill">2</span>
-                            </a>
-                            <a
-                                href="./portal-messages.html"
-                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
-                                Messages
-                                <span class="badge bg-primary rounded-pill">8</span>
-                            </a>
-                            <a href="./portal-patients.html" class="list-group-item list-group-item-action">
-                                Patients
                             </a>
                         </div>
                     </div>
@@ -66,29 +57,18 @@
                             <label class="form-label">Search Patient</label>
                         </div>
                         <div class="row">
-                            <div class="col p-3">
+                            <div class="col-4 p-3">
                                 <p class="text-center my-3">Pending</p>
                                 <div class="list-group">
                                     <button class="btn btn-primary list-group-item active">James Smith</button>
                                     <button class="btn btn-primary list-group-item">Maria Garcia</button>
                                 </div>
                             </div>
-                            <div class="col p-3">
-                                <p class="text-center my-3">Current</p>
+                            <div class="col-8 p-3">
+                                <p class="text-center my-3">Prescription</p>
                                 <div class="list-group">
                                     <button class="btn btn-primary list-group-item">Atorvastatin (Lipitor)</button>
-                                </div>
-                            </div>
-                            <div class="col p-3">
-                                <p class="text-center my-3">Conflicts</p>
-                                <div class="list-group">
-                                    <button class="btn btn-primary list-group-item">
-                                        Lisinopril (Prinivil, Zestril)
-                                    </button>
-                                </div>
-                                <p class="text-center my-3">Alternative</p>
-                                <div class="list-group">
-                                    <button class="btn btn-primary list-group-item">Gabapentin (Neurontin)</button>
+                                    <button class="btn btn-primary list-group-item">Lisinopril (Prinivil, Zestril)</button>
                                 </div>
                             </div>
                         </div>

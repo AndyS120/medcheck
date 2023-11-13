@@ -3,31 +3,31 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./pages/bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
         <title>Home Page</title>
-        <script src="./pages/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js" defer></script>
+        <script src="js/bootstrap.bundle.min.js" defer></script>
     </head>
     <body>
         <div class="navbar navbar-expand-lg bg-primary fs-5">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand m-3 fs-3 align-text-center">
+                <a href="#" class="navbar-brand m-3 fs-3 align-text-center">
                     <img
-                        src="./pages/img/logo.PNG"
+                        src="img/logo.PNG"
                         width="50px"
                         height="50px"
                         class="d-inline-block object-fit-cover" />
                     MedCheck
                 </a>
                 <ul class="navbar-nav">
-                    <li class="nav-item m-3"><a href="./pages/login.html" class="nav-link">Login</a></li>
-                    <li class="nav-item m-3"><a href="./pages/signup.html" class="nav-link">Signup</a></li>
+                    <li class="nav-item m-3"><a href="login" class="nav-link">Login</a></li>
+                    <li class="nav-item m-3"><a href="signup" class="nav-link">Signup</a></li>
                 </ul>
             </div>
         </div>
         <div class="row w-100 m-0">
             <figure class="figure p-0 m-0 position-relative">
                 <img
-                    src="./pages/img/pharmacy_bg.jpg"
+                    src="img/pharmacy_bg.jpg"
                     style="height: 440px; width: 100%"
                     class="img-fluid object-fit-cover p-0" />
                 <figcaption class="figure-caption position-absolute bottom-0 end-0 text-light pe-3">
