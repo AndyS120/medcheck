@@ -15,10 +15,6 @@ public class PortalController {
         return "redirect:/portal";
     }
 
-    @GetMapping("/inventory")
-    public String getInventory() {
-        return "portal-inventory";
-    }
     @GetMapping("/conflicts")
     public String getConflicts() {
         return "portal-conflicts";

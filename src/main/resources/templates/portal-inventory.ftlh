@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link href="/css/bootstrap.css" rel="stylesheet">
         <title>Portal</title>
-        <script src="js/bootstrap.bundle.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous" defer></script>
     </head>
     <body>
         <div class="navbar navbar-expand-lg bg-primary fs-5">
@@ -21,7 +23,7 @@
         </div>
         <div class="row w-100 mb-5">
             <div class="col-1"></div>
-            <div class="col-10">
+            <div class="col-10 mb-5">
                 <h2 class="text-center m-5">Portal</h2>
                 <div class="form-floating">
                     <input type="text" class="form-control" placeholder="Search Label" />
@@ -35,91 +37,50 @@
                                 href="inventory"
                                 class="d-flex justify-content-between align-items-center list-group-item list-group-item-action active">
                                 Inventory
-                                <span class="badge bg-danger rounded-pill">1</span>
+<#--                                <span class="badge bg-danger rounded-pill">1</span>-->
                             </a>
                             <a
                                 href="prescriptions"
                                 class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
                                 Prescriptions
-                                <span class="badge bg-primary rounded-pill">2</span>
+<#--                                <span class="badge bg-primary rounded-pill">2</span>-->
                             </a>
                             <a
                                 href="conflicts"
                                 class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
                                 Conflicts
-                                <span class="badge bg-warning rounded-pill">2</span>
+<#--                                <span class="badge bg-warning rounded-pill">2</span>-->
                             </a>
                         </div>
                     </div>
                     <div class="col-9 border p-5" style="height: 550px; overflow-y: scroll">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" placeholder="Search Item" />
-                            <label class="form-label">Search Item</label>
-                        </div>
+<#--                        <div class="form-floating">-->
+<#--                            <input type="text" class="form-control" placeholder="Search Item" />-->
+<#--                            <label class="form-label">Search Item</label>-->
+<#--                        </div>-->
                         <div class="row">
-                            <div class="col p-3">
+                            <div class="col-8 p-3">
                                 <p class="text-center my-3">In Stock</p>
                                 <ul class="list-group">
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Atorvastatin
-                                        <span class="badge bg-primary rounded-pill">50</span>
-                                    </li>
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Lisinopril
-                                        <span class="badge bg-primary rounded-pill">34</span>
-                                    </li>
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Albuterol
-                                        <span class="badge bg-primary rounded-pill">24</span>
-                                    </li>
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Levothyroxine
-                                        <span class="badge bg-primary rounded-pill">30</span>
-                                    </li>
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Amlodipine
-                                        <span class="badge bg-primary rounded-pill">11</span>
-                                    </li>
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Gabapentin
-                                        <span class="badge bg-primary rounded-pill">35</span>
-                                    </li>
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Omeprazole
-                                        <span class="badge bg-primary rounded-pill">29</span>
-                                    </li>
-                                    <li
-                                        class="d-flex justify-content-between align-items-center list-group-item">
-                                        Metformin
-                                        <span class="badge bg-danger rounded-pill">0</span>
-                                    </li>
+                                    <#list itemList as item>
+                                        <li class="d-flex align-items-center list-group-item">
+                                            ${item.itemName}
+                                            <span class="badge rounded-pill ms-2 me-auto <#if item.amount <
+                                            10>bg-danger<#elseif item.amount < 50
+                                            >bg-warning<#else>bg-primary</#if>">${item
+                                                .amount}</span>
+                                            <a href="/inventory/edit/id=${item.itemID}" class="btn
+                                            btn-outline-primary me-2">Edit</a>
+                                            <a href="/inventory/delete/id=${item.itemID}" class="btn
+                                            btn-outline-danger">Remove</a>
+                                        </li>
+                                    </#list>
                                 </ul>
                             </div>
-                            <div class="col p-3">
+                            <div class="col-4 p-3">
                                 <p class="text-center my-3">Order</p>
-                                <select class="form-select py-3">
-                                    <option value="Atorvastatin">Atorvastatin</option>
-                                    <option value="Lisinopril">Lisinopril</option>
-                                    <option value="Albuterol">Albuterol</option>
-                                    <option value="Levothyroxine">Levothyroxine</option>
-                                    <option value="Amlodipine">Amlodipine</option>
-                                    <option value="Gabapentin">Gabapentin</option>
-                                    <option value="Omeprazole">Omeprazole</option>
-                                    <option value="Metformin">Metformin</option>
-                                </select>
-                                <div class="form-floating my-5">
-                                    <input type="text" class="form-control" placeholder="Amount" />
-                                    <label class="form-label">Amount</label>
-                                </div>
                                 <div class="d-flex justify-content-center m-5">
-                                    <button class="btn btn-primary">Send Order</button>
+                                    <a href="inventory/order" class="btn btn-primary">Create Order</a>
                                 </div>
                             </div>
                         </div>
@@ -128,6 +89,6 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div class="row bg-secondary m-0 w-100" style="height: 100px"></div>
+        <div class="row bg-secondary m-0 w-100" style="height: 200px"></div>
     </body>
 </html>
