@@ -1,4 +1,4 @@
-package com.csc340.medcheck.portal;
+package com.csc340.medcheck.pharmacist;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

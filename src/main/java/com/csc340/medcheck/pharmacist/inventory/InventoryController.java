@@ -1,4 +1,4 @@
-package com.csc340.medcheck.portal.inventory;
+package com.csc340.medcheck.pharmacist.inventory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

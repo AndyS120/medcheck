@@ -1,4 +1,4 @@
-package com.csc340.medcheck.portal.inventory;
+package com.csc340.medcheck.pharmacist.inventory;
 
 import jakarta.persistence.*;
 import lombok.*;
