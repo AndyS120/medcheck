@@ -1,5 +1,6 @@
 package com.csc340.medcheck.pharmacist.inventory;
 
+import com.csc340.medcheck.API.SearchField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ public class InventoryController {
 
     @GetMapping({"", "/"})
     public String getInventory(Model model) {
+        SearchField searchField = new SearchField();
+        model.addAttribute("searchField", searchField);
         model.addAttribute("itemList", inventoryService.getAllItems());
         return "portal-inventory";
     }

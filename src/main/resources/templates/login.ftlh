@@ -18,7 +18,7 @@
         </a>
     </div>
 </nav>
-<div class="row w-100">
+<div class="row w-100" style="height:80vh">
     <div class="col"></div>
     <div class="col my-5 align-center">
         <h1 class="text-center m-3">Login</h1>

@@ -5,7 +5,7 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous" defer></script>
@@ -26,7 +26,7 @@
         </ul>
     </div>
 </div>
-<div class="row w-100 mb-5">
+<div class="row w-100" style="height:80vh">
     <div class="col-3"></div>
     <div class="col-6">
         <h1 class="text-center m-3"><#if isUpdate>Edit <#else>Create </#if>Order</h1>
@@ -106,6 +106,6 @@
     </div>
     <div class="col-3"></div>
 </div>
-<div class="row bg-secondary m-0 w-100" style="height: 100px"></div>
+<div class="row bg-secondary m-0 w-100 position-absolute bottom-0 start-50 translate-middle-x" style="height: 100px"></div>
 </body>
 </html>

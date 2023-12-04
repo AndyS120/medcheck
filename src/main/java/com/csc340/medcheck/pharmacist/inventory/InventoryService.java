@@ -14,10 +14,6 @@ public class InventoryService {
         return repository.getReferenceById(id);
     }
 
-//    public Item getItemByName(String name) {
-//        repository.get
-//    }
-
     public List<Item> getAllItems() {
         return repository.findAll();
     }

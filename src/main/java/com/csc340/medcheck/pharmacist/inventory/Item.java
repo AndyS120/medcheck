@@ -12,7 +12,7 @@ import lombok.*;
 public class Item {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue
     private long itemID;
 
     @Column(nullable = false, unique = true)
