@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/static/css/bootstrap.css" rel="stylesheet">
+        <title>Portal</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous" defer></script>
+    </head>
+    <body>
+        <div class="navbar navbar-expand-lg bg-primary fs-5">
+            <div class="container-fluid">
+                <a href="http://localhost:8080/index" class="navbar-brand m-3 fs-3 align-text-center">
+                    <img src="/static/img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover"  alt="logo"/>
+                    MedCheck
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item m-3"><a href="http://localhost:8080/index" class="nav-link">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row w-100 mb-5">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <h2 class="text-center m-5">Portal</h2>
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Search Label" />
+                    <label class="form-label">Search Label</label>
+                </div>
+                <div class="row g-0 mb-5">
+                    <div class="col-3 border" style="height: 550px">
+                        <div class="list-group">
+                            <a
+                                href="./portal-messages.html"
+                                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action active">
+                                Messages
+                                <span class="badge bg-primary rounded-pill">8</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-9 border p-5" style="height: 550px; overflow-y: scroll">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" placeholder="Search Patient" value="James Smith" />
+                            <label class="form-label">Search Patient</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 p-3">
+                                <p class="text-center mb-3">Messages</p>
+                                <div class="list-group" id="patient2-div"></div>
+                            </div>
+                            <div class="col-8 p-3">
+                                <label class="form-label mb-3">Message</label>
+                                <div class="form-control" id="message-div-box">
+                                    
+                                </div>
+                                <div class="d-flex justify-content-center m-5">
+                                    <button class="btn btn-primary" id="send-message">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row bg-secondary m-0 w-100" style="height: 100px"></div>
+        
+        
+        <script>
+            $(document).ready(function() {
+                var patientId = "";
+                
+                // Event listener for sending a message
+                const sendMessageButton = document.getElementById("send-message");
+                sendMessageButton.addEventListener("click", function() {
+                    const data = {
+                        message: document.getElementById("message-active").value,
+                        patientId: patientId
+                    }
+                    
+                    // AJAX request to send message
+                    $.ajax({
+                        type: "POST",
+                        url: `/api/messages`,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        data: JSON.stringify(data),
+                        
+                        // Dynamically update message div with the response message
+                        success: function(response){
+                            document.getElementById("message-active").value = "";
+                            const messageDiv = document.getElementById("message-div-box")
+                            const p = document.createElement("p");
+                            p.classList.add(`messages-${response.id}`);
+                            p.textContent = response.message;
+                            messageDiv.appendChild(p);
+                            
+                            messageDiv.removeChild(document.getElementById("message-active"));
+                            
+                            // Creating textbox
+                            const input = document.createElement("input");
+                            input.classList.add(`messages-${response.id}`);
+                            input.classList.add('form-control');
+                            input.id = 'message-active';
+                            input.type = "text";
+
+                            messageDiv.appendChild(input);
+                        }
+                    });
+                });
+                
+                // AJAX request to retrieve list of patients
+                $.ajax({
+                    type: "GET",
+                    url: `/api/patients`,
+                    success: function(response) {
+                    const container = document.getElementById("patient2-div");
+                    response.forEach(item => {
+                        const div = document.createElement("div");
+                        div.className = "btn btn-primary list-group-item";
+                        div.textContent = `${item.fullName}`;
+                        
+                        // Function to handle fetching and displaying messages for a selected patient2
+                        div.addEventListener("click", function() {
+                            $.ajax({
+                                type: "GET",
+                                url: `/api/messages?patientId=${item.id}`,
+                                success: function(patientsResponse) {
+                                    const messageDiv = document.getElementById("message-div-box");
+                                    while(messageDiv.firstChild) {
+                                        messageDiv.removeChild(messageDiv.firstChild);
+                                    }
+                                    
+                                    patientId = item.id;
+                                    patientsResponse.forEach(message => {
+                                        const p = document.createElement("p");
+                                        p.classList.add(`messages-${item.id}`);
+                                        p.textContent = message.message;
+                                     
+                                        
+                                        messageDiv.appendChild(p);
+                                        
+                                    });
+                                    // Creating textbox
+                                    const input = document.createElement("input");
+                                    input.classList.add(`messages-${item.id}`);
+                                    input.classList.add('form-control');
+                                    input.id = 'message-active';
+                                    input.type = "text";
+                                        
+                                    messageDiv.appendChild(input);
+                                }
+                            })
+                        
+                        });
+                        container.appendChild(div);
+                    });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
