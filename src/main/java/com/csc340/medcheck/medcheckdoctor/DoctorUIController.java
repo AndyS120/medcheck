@@ -21,4 +21,9 @@ public class DoctorUIController {
     public String loadPortalMessage(Model model) {
         return "doctor/portal-messages";
     }
+    
+    @GetMapping("/doctor-patient-info")
+    public String loadPatientInfo(Model model) {
+        return "doctor/patient-info";
+    }
 }
