@@ -23,7 +23,7 @@
     <div class="col"></div>
     <div class="col my-5 align-center">
         <h1 class="text-center m-3">Login</h1>
-        <form action="/login" method="post">
+        <form action="http://localhost:8080/medcheck/portal-messages" method="get">
             <div class="m-3 form-floating">
                 <input type="email" class="form-control" name="username" placeholder="Email"/>
                 <label class="form-label">Email</label>
@@ -39,6 +39,6 @@
     </div>
     <div class="col"></div>
 </div>
-<div class="row bg-secondary position-absolute start-0 bottom-0 m-0 w-100" style="height: 100px"></div>
+<div class="row bg-secondary m-0 w-100 position-fixed bottom-0 start-50 translate-middle-x" style="height: 100px"></div>
 </body>
 </html>

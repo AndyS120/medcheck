@@ -44,7 +44,8 @@
                         Messages
                     </a>
                     <a href="http://localhost:8080/medcheck/portal-prescribe" class="d-flex
-                    justify-content-between align-items-center list-group-item list-group-item-action">Prescribe Medications</a>
+                    justify-content-between align-items-center list-group-item list-group-item-action">Prescribe
+                                                                                                       Medications</a>
                     <a href="http://localhost:8080/medcheck/portal-patient-info" class="d-flex
                     justify-content-between align-items-center list-group-item list-group-item-action">Patient
                                                                                                        Information</a>
@@ -52,36 +53,22 @@
             </div>
             <div class="col-9 border p-5" style="overflow-y: scroll">
                 <h4 class="text-center m-3">Search</h4>
-                <#if response??>
-                    <h4>Details</h4>
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td>Generic Name</td>
-                            <td>${openFDA.get("generic_name").get(0)}</td>
-                        </tr>
-                        <tr>
-                            <td>Manufacturer Name</td>
-                            <td>${openFDA.get("manufacturer_name").get(0)}</td>
-                        </tr>
-                        <tr>
-                            <td>Brand Name</td>
-                            <td>${openFDA.get("brand_name").get(0)}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <#if response.get("indications_and_usage")??>
-                        <h4>Indications and Usage</h4>
-                        <p>${response.get("indications_and_usage").get(0)}</p>
-                    </#if>
-                    <#if response.get("dosage_forms_and_strengths")??>
-                        <h4>Dosage Forms and Strengths</h4>
-                        <p>${response.get("dosage_forms_and_strengths").get(0)}</p>
-                    </#if>
-                <#else>
-                    <h4 class="text-danger text-center">Error</h4>
-                    <h6 class="text-center">Couldn't find medication in API</h6>
-                </#if>
+                <div class="row">
+                    <form action="http://localhost:8080/medcheck/create-prescription" method="post">
+                        <div class="col">
+                            <h6>Select Patient</h6>
+                            <select>
+                                <#list patientList as patient>
+                                    <option value="${patient.getId()}">${patient.getFullName()}</option>
+                                </#list>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <h6>Prescribe</h6>
+                            <input type="text" name="medicationName">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface PatientRepo extends JpaRepository<Patient2, Long> {
+public interface PatientRepo extends JpaRepository<Patient, Long> {
 
-    Optional<Patient2> findByUserName(String userName);
+    Optional<Patient> findByUserName(String userName);
 }

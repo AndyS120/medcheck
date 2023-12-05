@@ -20,7 +20,7 @@ public class InventoryController {
         SearchField searchField = new SearchField();
         model.addAttribute("searchField", searchField);
         model.addAttribute("itemList", inventoryService.getAllItems());
-        return "portal-inventory";
+        return "/pharmacist/portal-inventory";
     }
 
     @GetMapping("/order")
@@ -29,7 +29,7 @@ public class InventoryController {
         model.addAttribute("itemList", inventoryService.getAllItems());
         model.addAttribute("newItem", item);
         model.addAttribute("isUpdate", false);
-        return "order";
+        return "/pharmacist/order";
     }
 
     @GetMapping("/delete/id={itemID}")
@@ -43,7 +43,7 @@ public class InventoryController {
         Item item = inventoryService.getItemById(itemID);
         model.addAttribute("item", item);
         model.addAttribute("isUpdate", true);
-        return "order";
+        return "/pharmacist/order";
     }
 
     @PostMapping("/create")

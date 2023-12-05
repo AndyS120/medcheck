@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Patient2 {
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,5 +33,9 @@ public class Patient2 {
     private String insuranceInfo;
     private String allergies;
     private String medicalHistory;
+
+    public Patient(String fullName) {
+        this.fullName = fullName;
+    }
 
 }

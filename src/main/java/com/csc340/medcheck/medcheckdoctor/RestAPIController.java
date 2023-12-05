@@ -5,7 +5,8 @@
 package com.csc340.medcheck.medcheckdoctor;
 
 import com.csc340.medcheck.medcheckdoctor.MessagePatient.*;
-import com.csc340.medcheck.medcheckdoctor.Patient.*;
+import com.csc340.medcheck.security.patient.Patient;
+import com.csc340.medcheck.security.patient.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

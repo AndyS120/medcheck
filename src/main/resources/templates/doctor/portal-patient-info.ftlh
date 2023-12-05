@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous" defer></script>
+    <title>Search</title>
+</head>
+<body>
+<div class="navbar navbar-expand-lg bg-primary fs-5">
+    <div class="container-fluid">
+        <a href="/index" class="navbar-brand m-3 fs-3 align-text-center">
+            <img src="/static/img/logo.PNG" width="50px" height="50px"
+                 class="d-inline-block
+            object-fit-cover" alt="logo"/>
+            MedCheck
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item m-3"><a href="/index" class="nav-link">Logout</a></li>
+        </ul>
+    </div>
+</div>
+<div class="row w-100" style="height:80vh">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <h2 class="text-center m-5">Portal</h2>
+        <form action="http://localhost:8080/medcheck/search">
+            <div class="form-floating">
+                <input id="search-label" type="text" class="form-control" placeholder="Search Label" name="term"/>
+                <label for="search-label" class="form-label">Search Label</label>
+            </div>
+        </form>
+        <div class="row g-0 mb-5 h-75">
+            <div class="col-3 border">
+                <div class="list-group">
+                    <a
+                            href="http://localhost:8080/medcheck/portal-messages"
+                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
+                        Messages
+                    </a>
+                    <a href="http://localhost:8080/medcheck/portal-prescribe" class="d-flex
+                    justify-content-between align-items-center list-group-item list-group-item-action">Prescribe Medications</a>
+                    <a href="http://localhost:8080/medcheck/portal-patient-info" class="d-flex
+                    justify-content-between align-items-center list-group-item list-group-item-action">Patient
+                                                                                                       Information</a>
+                </div>
+            </div>
+            <div class="col-9 border p-5" style="overflow-y: scroll">
+                <h4 class="text-center m-3">Patient Information</h4>
+                <#list patientList as patient>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">Full Name:</span>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Patient Name"
+                                value="${patient.fullName}"/>
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">DOB:</span>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="DOB"
+                                value="${patient.dob}"/>
+                        <span class="input-group-text">Gender:</span>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Gender"
+                                value="${patient.gender}"/>
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">Phone:</span>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Patient Phone"
+                                value="${patient.phoneNumber}"/>
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">Email:</span>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Patient Phone"
+                                value="${patient.email}"/>
+                    </div>
+                    <div class="input-group mb-1">
+                        <span class="input-group-text">Address:</span>
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Street"
+                                value="${patient.address}"/>
+                    </div>
+                    <span class="input-group-text">Insurance:</span>
+                    <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Insurance"
+                            value="${patient.insuranceInfo}"/>
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Allergies</label>
+                                <input type="text" class="form-control" placeholder="Allergies"
+                                       value="${patient.allergies}">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Medical History</label>
+                                <input type="text" class="form-control" placeholder="Medical History"
+                                       value="${patient.medicalHistory}">
+                            </div>
+                        </div>
+                    </div>
+                </#list>
+            </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+</div>
+<div class="row bg-secondary m-0 w-100 position-fixed bottom-0 start-50 translate-middle-x" style="height: 100px"></div>
+</body>
+</html>

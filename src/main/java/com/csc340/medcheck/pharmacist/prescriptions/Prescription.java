@@ -18,16 +18,11 @@ public class Prescription {
     @GeneratedValue
     private long prescriptionID;
 
-    @Column(nullable = false)
     private long doctorID;
-    private String doctorFirstName;
-    private String doctorLastName;
+    private String doctorFullName;
 
-    @Column(nullable = false)
     private long patientID;
-    private String patientFirstName;
-    private String patientLastName;
+    private String patientFullName;
 
-    @Column(nullable = false)
-    private long medicationID;
+    private String medicationName;
 }

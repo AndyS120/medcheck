@@ -25,7 +25,10 @@ public class PrescriptionService {
 
     public void updatePrescription(long id, Prescription prescription) {
         Prescription existing = getPrescriptionById(id);
-        existing.setMedicationID(prescription.getMedicationID());
+        existing.setPrescriptionID(prescription.getPrescriptionID());
+        existing.setDoctorFullName(prescription.getDoctorFullName());
+        existing.setDoctorID(prescription.getDoctorID());
+//        existing.set
 
         repository.save(existing);
     }

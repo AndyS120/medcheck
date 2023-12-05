@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
     <title>Portal</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -13,7 +13,8 @@
 <div class="navbar navbar-expand-lg bg-primary fs-5">
     <div class="container-fluid">
         <a href="http://localhost:8080/index" class="navbar-brand m-3 fs-3 align-text-center">
-            <img src="img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover" alt="logo"/>
+            <img src="/static/img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover"
+                 alt="logo"/>
             MedCheck
         </a>
         <ul class="navbar-nav">
@@ -57,9 +58,9 @@
                     <div class="col-4 p-3">
                         <p class="text-center my-3">Pending</p>
                         <div class="list-group">
-                            <#list prescriptionList as prescription>
-                            <button class="btn btn-primary list-group-item">${prescription.getPatientFirstName
-                                ()} ${prescription.getPatientLastName()}</button>
+                            <#list patientList as patient>
+                            <button class="btn btn-primary list-group-item">${patient
+                                .fullName}</button>
                             </#list>
                         </div>
                     </div>
@@ -76,7 +77,7 @@
     </div>
     <div class="col-1"></div>
 </div>
-<div class="row bg-secondary m-0 w-100 position-absolute bottom-0 start-50 translate-middle-x"
-     style="height: 100px"></div>
+<div class="row bg-secondary m-0 w-100 position-fixed bottom-0 start-50 translate-middle-x" style="height: 100px"></div>
+
 </body>
 </html>

@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PatientController {
 
     @Autowired
-    PatientService2 service;
+    PatientService service;
 
     @PostMapping("/create")
-    public String createUser(Patient2 patient2) {
-        patient2.setRole("PATIENT");
-        patient2.setUserName(patient2.getEmail());
-        service.savePatient(patient2);
+    public String createUser(Patient patient) {
+        patient.setRole("PATIENT");
+        patient.setUserName(patient.getEmail());
+        service.savePatient(patient);
         return "redirect:../login";
     }
+
 }

@@ -35,7 +35,7 @@
         <div class="col-2"></div>
     </div>
 </div>
-<div class="row bg-secondary m-0 w-100 position-absolute bottom-0 start-50 translate-middle-x"
-     style="height: 100px"></div>
+<div class="row bg-secondary m-0 w-100 position-fixed bottom-0 start-50 translate-middle-x" style="height: 100px"></div>
+
 </body>
 </html>

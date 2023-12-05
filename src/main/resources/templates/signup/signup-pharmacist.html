@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="/static/css/bootstrap.css" rel="stylesheet"/>
-        <title>Signup</title>
-		<script crossorigin="anonymous"
-				defer
-				integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg bg-primary fs-5">
-            <div class="container-fluid">
-                <a href="http://localhost:8080/index" class="navbar-brand m-3 fs-3 align-text-center">
-                    <img src="/static/img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover"  alt="logo"/>
-                    MedCheck
-                </a>
-            </div>
-        </nav>
-        <div class="row w-100">
-            <div class="col"></div>
-            <div class="col my-5 align-center">
-                <div class="container mt-5">
-					<h1 class="text-center">Pharmacist Signup</h1>
-					<form action="/pharmacist/create" method="post">
-					<div class="mb-3">
-						<label for="fullName" class="form-label">Full Name</label>
-						<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
-					</div>
-					<div class="mb-3">
-						<label for="email" class="form-label">Email address</label>
-						<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-					</div>
-					<div class="mb-3">
-						<label for="password" class="form-label">Password</label>
-						<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-					</div>
-					<div class="mb-3">
-						<label for="dob" class="form-label">Date of Birth</label>
-						<input type="date" class="form-control" name="dob" id="dob" required>
-					</div>
-					<div class="mb-3">
-						<label class="form-label">Gender</label>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="gender" id="male" value="male">
-							<label class="form-check-label" for="male">Male</label>
-						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="gender" id="female" value="female">
-							<label class="form-check-label" for="female">Female</label>
-						</div>
-					</div>
-					<div class="mb-3">
-						<label for="address" class="form-label">Address</label>
-						<input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
-					</div>
-					<div class="mb-3">
-						<label for="phoneNumber" class="form-label">Phone Number</label>
-						<input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
-					</div>
-					<div class="mb-3">
-						<label for="experience" class="form-label">Years of Experience</label>
-						<input type="number" class="form-control" min="0" id="experience" name="experience" placeholder="Enter years of experience" required>
-					</div>
-					<button type="submit" class="btn btn-primary" style="margin-bottom:120px">Submit</button>
-				</form>
-				</div>
-				<div class="row bg-secondary start-0 bottom-0 m-0 w-100" style="height: 100px; position: fixed"></div>
-            </div>
-            <div class="col"></div>
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="/static/css/bootstrap.css" rel="stylesheet"/>
+    <title>Signup</title>
+    <script crossorigin="anonymous"
+            defer
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary fs-5">
+    <div class="container-fluid">
+        <a class="navbar-brand m-3 fs-3 align-text-center" href="http://localhost:8080/index">
+            <img alt="logo" class="d-inline-block object-fit-cover" height="50px" src="/static/img/logo.PNG" width="50px"/>
+            MedCheck
+        </a>
+    </div>
+</nav>
+<div class="row w-100">
+    <div class="col"></div>
+    <div class="col my-5 align-center">
+        <div class="container mt-5">
+            <h1 class="text-center">Pharmacist Signup</h1>
+            <form action="/pharmacist/create" method="post">
+                <div class="mb-3">
+                    <label class="form-label" for="fullName">Full Name</label>
+                    <input class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="email">Email address</label>
+                    <input class="form-control" id="email" name="email" placeholder="Enter your email" required type="email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" id="password" name="password" placeholder="Enter your password" required type="password">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="dob">Date of Birth</label>
+                    <input class="form-control" id="dob" name="dob" required type="date">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <div class="form-check">
+                        <input class="form-check-input" id="male" name="gender" type="radio" value="male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" id="female" name="gender" type="radio" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="address">Address</label>
+                    <input class="form-control" id="address" name="address" placeholder="Enter your address" required type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                    <input class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required type="tel">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="experience">Years of Experience</label>
+                    <input class="form-control" id="experience" min="0" name="experience" placeholder="Enter years of experience" required type="number">
+                </div>
+                <button class="btn btn-primary" style="margin-bottom:120px" type="submit">Submit</button>
+            </form>
         </div>
-    </body>
+    </div>
+    <div class="col"></div>
+</div>
+<div class="row bg-secondary m-0 w-100 position-fixed bottom-0 start-50 translate-middle-x" style="height: 100px"></div>
+
+</body>
 </html>

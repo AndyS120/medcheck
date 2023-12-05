@@ -1,7 +1,7 @@
 package com.csc340.medcheck;
 
-import com.csc340.medcheck.medcheckdoctor.Patient.Patient;
 import com.csc340.medcheck.security.doctor.Doctor;
+import com.csc340.medcheck.security.patient.Patient;
 import com.csc340.medcheck.security.pharmacist.Pharmacist;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,5 +63,10 @@ public class MainController {
         Pharmacist pharmacist = new Pharmacist();
         model.addAttribute("pharmacist", pharmacist);
         return "signup/signup-pharmacist";
+    }
+
+    @GetMapping("/403")
+    public String get403() {
+        return "403";
     }
 }
