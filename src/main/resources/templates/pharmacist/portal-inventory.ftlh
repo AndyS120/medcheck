@@ -64,9 +64,9 @@
                                     10>bg-danger<#elseif item.amount < 50
                                     >bg-warning<#else>bg-primary</#if>">${item
                                         .amount}</span>
-                                    <a href="/inventory/edit/id=${item.itemID}" class="btn
+                                    <a href="http://localhost:8080/inventory/edit/id=${item.itemID}" class="btn
                                             btn-outline-primary me-2">Edit</a>
-                                    <a href="/inventory/delete/id=${item.itemID}" class="btn
+                                    <a href="http://localhost:8080/inventory/delete/id=${item.itemID}" class="btn
                                             btn-outline-danger">Remove</a>
                                 </li>
                             </#list>
@@ -75,7 +75,7 @@
                     <div class="col-4 p-3">
                         <p class="text-center my-3">Order</p>
                         <div class="d-flex justify-content-center m-5">
-                            <a href="inventory/order" class="btn btn-primary">Create Order</a>
+                            <a href="http://localhost:8080/inventory/order" class="btn btn-primary">Create Order</a>
                         </div>
                     </div>
                 </div>

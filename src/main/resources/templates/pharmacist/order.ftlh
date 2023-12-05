@@ -5,7 +5,7 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous" defer></script>
@@ -30,7 +30,9 @@
     <div class="col-3"></div>
     <div class="col-6">
         <h1 class="text-center m-3"><#if isUpdate>Edit <#else>Create </#if>Order</h1>
-        <form action="<#if isUpdate>/inventory/edit/id=${item.itemID}<#else>/inventory/create</#if>" name="item"
+        <form action="<#if isUpdate>http://localhost:8080/inventory/edit/id=${item
+        .itemID}<#else>http://localhost:8080/inventory/create</#if>"
+              name="item"
               method="post">
             <div class="m-3 form-floating">
                 <input type="text" id="form" class="form-control" list="medication-list" name="itemName"
