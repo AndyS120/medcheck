@@ -1,4 +1,4 @@
-package com.csc340.medcheck.security.doctor;
+package com.csc340.medcheck.security.pharmacist;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,12 +6,12 @@ import lombok.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "doctor")
+@Table(name = "pharmacist")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Doctor {
+public class Pharmacist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,8 +30,6 @@ public class Doctor {
     private String gender;
     private String address;
     private String phoneNumber;
-    private String specialization;
-    private String hospital;
     private int experience;
 
 }
