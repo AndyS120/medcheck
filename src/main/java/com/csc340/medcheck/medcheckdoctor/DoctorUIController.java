@@ -35,17 +35,22 @@ public class DoctorUIController {
     DoctorService doctorService;
     @Autowired
     PrescriptionService prescriptionService;
-    
+
     @GetMapping("/portal-messages")
     public String loadPortalMessage(Model model) {
         return "doctor/portal-messages";
     }
 
-    @GetMapping("/portal-patient-info")
+
+    @GetMapping("/doctor-patient-info")
     public String loadPatientInfo(Model model) {
-        model.addAttribute("patientList", patientService.getAllPatients());
-        return "doctor/portal-patient-info";
+        return "doctor/patient-info";
     }
+//    @GetMapping("/portal-patient-info")
+//    public String loadPatientInfo(Model model) {
+//        model.addAttribute("patientList", patientService.getAllPatients());
+//        return "doctor/portal-patient-info";
+//    }
 
     @GetMapping("/portal-prescribe")
     public String loadMedications(Model model) {
