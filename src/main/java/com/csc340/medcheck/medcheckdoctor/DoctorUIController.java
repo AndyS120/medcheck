@@ -62,8 +62,7 @@ public class DoctorUIController {
 
     @PostMapping("/create-prescription")
     public String updatePrescription(Prescription prescription) {
-        prescription.setDoctorID(1);
-        prescription.setDoctorFullName(doctorService.getDoctor(prescription.getDoctorID()).getFullName());
+        prescription.setDoctorFullName("Joe Swanson");
         prescription.setPatientFullName(patientService.getPatient(prescription.getPatientID()).getFullName());
         prescriptionService.savePrescription(prescription);
         return "redirect:/portal-prescribe";

@@ -29,25 +29,28 @@
     <div class="col-1"></div>
     <div class="col-10">
         <h2 class="text-center m-5">Portal</h2>
-        <form action="http://localhost:8080/medcheck/search">
-            <div class="form-floating">
-                <input id="search-label" type="text" class="form-control" placeholder="Search Label" name="term"/>
-                <label for="search-label" class="form-label">Search Label</label>
-            </div>
-        </form>
         <div class="row g-0 mb-5 h-75">
             <div class="col-3 border">
                 <div class="list-group">
                     <a
-                            href="http://localhost:8080/medcheck/portal-messages"
-                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
+                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action active"
+                            href="./doctor-patient-info">
+                        Patient Info
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a
+                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                            href="http://localhost:8080/medcheck/portal-prescribe">
+                        Prescribe Medication
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a
+                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                            href="./portal-messages">
                         Messages
                     </a>
-                    <a href="http://localhost:8080/medcheck/portal-prescribe" class="d-flex
-                    justify-content-between align-items-center list-group-item list-group-item-action">Prescribe Medications</a>
-                    <a href="http://localhost:8080/medcheck/portal-patient-info" class="d-flex
-                    justify-content-between align-items-center list-group-item list-group-item-action">Patient
-                                                                                                       Information</a>
                 </div>
             </div>
             <div class="col-9 border p-5" style="overflow-y: scroll">

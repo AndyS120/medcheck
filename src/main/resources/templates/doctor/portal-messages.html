@@ -28,31 +28,27 @@
     <div class="col-1"></div>
     <div class="col-10">
         <h2 class="text-center m-5">Portal</h2>
-        <form action="http://localhost:8080/medcheck/search">
-            <div class="form-floating">
-                <input class="form-control" id="search-label" name="term" placeholder="Search Label" type="text"/>
-                <label class="form-label" for="search-label">Search Label</label>
-            </div>
-        </form>
         <div class="row g-0 mb-5">
             <div class="col-3 border" style="height: 550px">
                 <div class="list-group">
                     <a
-                            href="http://localhost:8080/medcheck/portal-messages"
-                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
-                        Messages
+                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action "
+                            href="./doctor-patient-info">
+                        Patient Info
                     </a>
-                    <a href="http://localhost:8080/medcheck/portal-prescribe" class="d-flex
-                    justify-content-between align-items-center list-group-item list-group-item-action">Prescribe Medications</a>
-<!--                    <a href="http://localhost:8080/medcheck/portal-patient-info" class="d-flex-->
-<!--                    justify-content-between align-items-center list-group-item list-group-item-action">Patient-->
-<!--                                                                                                       Information</a>-->
                 </div>
                 <div class="list-group">
                     <a
-                            href="./doctor-patient-info"
-                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action">
-                        Patient Info
+                            class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                            href="http://localhost:8080/medcheck/portal-prescribe">
+                        Prescribe Medication
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a
+                            class="d-flex justify-content-between active align-items-center list-group-item list-group-item-action"
+                            href="./portal-messages">
+                        Messages
                     </a>
                 </div>
             </div>
