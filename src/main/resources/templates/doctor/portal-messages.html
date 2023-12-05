@@ -52,7 +52,7 @@
                         <div class="row">
                             <div class="col-4 p-3">
                                 <p class="text-center mb-3">Messages</p>
-                                <div class="list-group" id="patient-div"></div>
+                                <div class="list-group" id="patient2-div"></div>
                             </div>
                             <div class="col-8 p-3">
                                 <label class="form-label mb-3">Message</label>
@@ -121,13 +121,13 @@
                     type: "GET",
                     url: `/api/patients`,
                     success: function(response) {
-                    const container = document.getElementById("patient-div");
+                    const container = document.getElementById("patient2-div");
                     response.forEach(item => {
                         const div = document.createElement("div");
                         div.className = "btn btn-primary list-group-item";
                         div.textContent = `${item.first} ${item.last}`;
                         
-                        // Function to handle fetching and displaying messages for a selected patient
+                        // Function to handle fetching and displaying messages for a selected patient2
                         div.addEventListener("click", function() {
                             $.ajax({
                                 type: "GET",

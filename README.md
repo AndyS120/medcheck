@@ -26,7 +26,7 @@ doctor and pharmacist and give options for a better suited medication.
 
 Our app allows for doctors to prescribe medications and pharmacists to fill those medications. It also
 allows everyone access to product information. Only doctors and pharmacists can see the medication conflict
-resolution. Patient information is only viewable by the doctor and patient.
+resolution. Patient information is only viewable by the doctor and patient2.
 
 Security is established by having each actor only be able to access their own functions.
 

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PatientService {
+public class PatientService2 {
 
     @Autowired
     PatientRepo repository;
@@ -16,11 +16,11 @@ public class PatientService {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    public List<Patient> getAllPatients() {
+    public List<Patient2> getAllPatients() {
         return repository.findAll();
     }
 
-    public Patient getPatient(long id) {
+    public Patient2 getPatient(long id) {
         return repository.getReferenceById(id);
     }
 
@@ -28,12 +28,12 @@ public class PatientService {
         repository.deleteById(id);
     }
 
-    public void savePatient(Patient patient) {
-        patient.setPassword(passwordEncoder.encode(patient.getPassword()));
-        repository.save(patient);
+    public void savePatient(Patient2 patient2) {
+        patient2.setPassword(passwordEncoder.encode(patient2.getPassword()));
+        repository.save(patient2);
     }
 
-    public Patient getPatientByUserName(String userName) {
+    public Patient2 getPatientByUserName(String userName) {
         return repository.findByUserName(userName).orElseThrow(()
                 -> new UsernameNotFoundException(userName + "not found"));
     }
