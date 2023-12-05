@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
     <title>Home Page</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -13,11 +13,8 @@
 <div class="navbar navbar-expand-lg bg-primary fs-5">
     <div class="container-fluid">
         <a href="#" class="navbar-brand m-3 fs-3 align-text-center">
-            <img
-                    src="img/logo.PNG"
-                    width="50px"
-                    height="50px"
-                    class="d-inline-block object-fit-cover"/>
+            <img src="/static/img/logo.PNG" width="50px" height="50px" class="d-inline-block object-fit-cover"
+                 alt="logo"/>
             MedCheck
         </a>
         <ul class="navbar-nav">
@@ -29,23 +26,15 @@
 <div style="height:80vh">
     <div class="row w-100 m-0">
         <figure class="figure p-0 m-0 position-relative">
-            <img
-                    src="img/pharmacy_bg.jpg"
-                    style="height: 440px; width: 100%"
-                    class="img-fluid object-fit-cover p-0"/>
+            <img src="/static/img/pharmacy_bg.jpg" style="height: 440px; width: 100%" class="img-fluid
+            object-fit-cover p-0" alt="pharmacy"/>
             <figcaption class="figure-caption position-absolute bottom-0 end-0 text-light pe-3">
                 Image by
-                <a
-                        href="https://pixabay.com/users/moakets-99876/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=218692"
-                        class="link-light">
-                    moakets
-                </a>
+                <a href="https://pixabay.com/users/moakets-99876/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=218692"
+                   class="link-light">moakets</a>
                 from
-                <a
-                        href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=218692"
-                        class="link-light">
-                    Pixabay
-                </a>
+                <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=218692"
+                   class="link-light">Pixabay</a>
             </figcaption>
             <div class="container-fluid position-absolute top-50 start-0 translate-middle-y">
                 <div class="row">

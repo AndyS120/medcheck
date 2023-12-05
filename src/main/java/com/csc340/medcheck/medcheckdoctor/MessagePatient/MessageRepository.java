@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.medcheckdoctor.medcheckdoctor.MessagePatient;
-import java.util.List;
+package com.csc340.medcheck.medcheckdoctor.MessagePatient;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 /**
  *

@@ -13,10 +13,4 @@ public class PortalController {
         model.addAttribute("searchField", searchField);
         return "redirect:/inventory/";
     }
-
-    @GetMapping("/main")
-    public String goToPortal() {
-        return "redirect:/portal";
-    }
-
 }
